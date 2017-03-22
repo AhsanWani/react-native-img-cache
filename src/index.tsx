@@ -77,6 +77,7 @@ export class ImageCache {
         const cache = this.cache[uri];
         if (cache && cache.downloading) {
             cache.task.cancel();
+            this.bust(uri);
         }
     }
 
